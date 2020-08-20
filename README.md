@@ -63,11 +63,11 @@ at the original project.
 	# Examples:
 
 	# Stable build's profile
-  	$ curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/script/install.sh |
+  	$ curl -fsSL https://raw.githubusercontent.com/phundrak/blurredfox/script/install.sh |
   	bash -s -- stable
 
   	# Nightly build's profile
-  	$ curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/script/install.sh |
+  	$ curl -fsSL https://raw.githubusercontent.com/phundrak/blurredfox/script/install.sh |
   	bash -s -- nightly
   	```
 
@@ -120,7 +120,7 @@ at the original project.
 1. I only have  Archlinux, macOS' untested while the theme  is broken on Windows
    10.
 2.    If    the    transparency    is   broken,    use    the    [solid    color
-   scheme](https://github.com/manilarome/blurredfox/blob/master/colors/solid.css).
+   scheme](https://github.com/phundrak/blurredfox/blob/master/colors/solid.css).
    Edit the `userChrome.css` to switch.
 
 ### Liar! The theme's name is `blurredfox`, ***where is the blur***?!
@@ -166,8 +166,8 @@ at the original project.
 
 ### I hate the colors! Why is everything transparent?!
 
-1.               Use                the               [solid               color
-   scheme](https://github.com/manilarome/blurredfox/blob/master/colors/solid.css)
+1.                          Use            the           [solid            color
+   scheme](https://github.com/phundrak/blurredfox/blob/master/colors/solid.css)
    by editing the `userChrome.css`.
 2. You can change the colors yourself.
 3. The transparency is only applied to `Dark` and `Light` mode under the blurred
@@ -191,7 +191,7 @@ more luck with the original project, link at the top of this README.
 ## Got a patch?
 
 You're     absolutely      welcome     to     submit     a      pull     request
-[here](https://github.com/manilarome/phundrak/pulls)!
+[here](https://github.com/phundrak/phundrak/pulls)!
 
 ## TODO
 
