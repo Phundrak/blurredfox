@@ -1,4 +1,4 @@
-/* 
+/*
 ░▀█▀░█▀█░█▀▄░█▀▄░█▀█░█▀▄
 ░░█░░█▀█░█▀▄░█▀▄░█▀█░█▀▄
 ░░▀░░▀░▀░▀▀░░▀▀░░▀░▀░▀░▀
@@ -30,7 +30,7 @@ The tabs container
 
 /* 	Set minimum height for tab bar */
 #tabbrowser-tabs {
-	--tab-min-height: 0;
+	/* --tab-min-height: 0; */
 	margin: 6px 5px 6px 5px;
 }
 
@@ -78,7 +78,7 @@ The tabs container
 }
 
 /* Remove the all the "lines" in tab sides */
-/* 
+/*
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
 	border-left: none !important;
@@ -118,7 +118,7 @@ The tabs container
 	padding: 0 10px !important;
 }
 
-/* A way to center the label and icon while 
+/* A way to center the label and icon while
 the close button is positioned to the far right */
 .tab-content::before{
 	content: "";
@@ -217,7 +217,7 @@ hbox.tab-content[pinned=true] .tab-text {
 }
 
 
-.private-browsing-indicator { 
+.private-browsing-indicator {
 	display: block;
 	background: transparent;
 }

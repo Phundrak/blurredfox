@@ -22,8 +22,23 @@ download_bf() {
 		FF_THEME="/tmp/blurredfox-master/"
 		cp -r "${FF_THEME}"* "${CHROME_DIRECTORY}"
 
+		# Backup user.js instead of overwriting it
+		if [ -e "${CHROME_DIRECTORY}/../user.js" ]
+		then
+			message "[>>] Existing user.js detected! Creating backup to user-prefs-backup/..."
+			user_pref_backup_dir="${CHROME_DIRECTORY}/../user-prefs-backup"
+
+			if [[ ! -d "${user_pref_backup_dir}" ]];
+			then
+				message "[>>] user-prefs-backup/ folder does not exist! Creating..."
+				mkdir "${user_pref_backup_dir}"
+			fi
+
+			mv --backup=t "${CHROME_DIRECTORY}/../user.js" "${user_pref_backup_dir}"
+		fi
+
 		# Move user.js to the main profile directory
-		mv "${CHROME_DIRECTORY}/user.js" "../"
+		mv "${CHROME_DIRECTORY}/user.js" "${CHROME_DIRECTORY}/../"
 
 		if [[ $? -eq 0 ]];
 		then
@@ -34,7 +49,7 @@ download_bf() {
 		fi
 	else
 		# Download failed
-		message " [!!] Problem detected while downloading the theme. Terminating..."
+		message " [!!] There was a problem while downloading the theme. Terminating..."
 		exit
 	fi
 	echo "░█▀▄░█░░░█░█░█▀▄░█▀▄░█▀▀░█▀▄"
@@ -123,23 +138,23 @@ then
 	if [[ -n "$CHROME_DIRECTORY" ]];
 	then
 		# Check if the chrome folder is not empty
-		shopt -s nullglob dotglob 
+		shopt -s nullglob dotglob
 		content="${CHROME_DIRECTORY}/"
 
 		# If there's a current theme, make a backup
 		if [ ${#content[@]} -gt 0 ];
 		then
-			message "[>>] Existing chrome folder detected! Creating a backup..."
-			
+			message "[>>] Existing chrome folder detected! Creating a backup to chrome-backup/..."
 			backup_dir="${CHROME_DIRECTORY}-backup"
 
 			# Create backup folder
 			if [[ ! -d "${backup_dir}" ]];
 			then
+				message "[>>] chrome-backup/ folder does not exist! Creating..."
 				mkdir "${backup_dir}"
 			fi
 
-			mv --backup=t "${CHROME_DIRECTORY}" "${CHROME_DIRECTORY}-backup"
+			mv --backup=t "${CHROME_DIRECTORY}" "${backup_dir}"
 			mkdir "${CHROME_DIRECTORY}"
 		fi
 		# Download theme
@@ -152,11 +167,11 @@ then
 		if [[ $? -eq 0 ]];
 		then
 			CHROME_DIRECTORY="${FF_USER_DIRECTORY}/chrome"
-			
+
 			# Download theme
 			download_bf
 		else
-			message "[!!] There was a problem creating the directory. Terminating..."
+			message "[!!] There was a problem while creating the directory. Terminating..."
 			exit 1;
 		fi
 	fi

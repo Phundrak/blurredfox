@@ -5,12 +5,11 @@
 <p align="center"><img alt="Firefox with blurredfox" src="scrots/blurred.png"/><br/><i>Firefox with blurredfox CSS theme</i></p>
 
 ## What changes compared to the original project?
-The  original   [blurredfox](https://github.com/manilarome/blurredfox/pulls)  is
-developed            and             maintained            by            [Gerome
-Matilla](https://github.com/manilarome/blurredfox/pulls).  The  reason  for  the
-existence of this  fork is for me to  have basically the same thing,  but with a
-customized color scheme. Turns out I am  currently way too much into Nord, and I
-changed  the  default  colors  to  Nord-friendly colors.  I  will  try  to  stay
+The original [blurredfox](https://github.com/manilarome/blurredfox) is developed
+and maintained by [Gerome Matilla](https://github.com/manilarome/). The reason
+for the existence of this fork is for me to have basically the same thing, but
+with a customized color scheme. Turns out I am currently way too much into Nord,
+and I changed the default colors to Nord-friendly colors. I will try to stay
 up-to-date from time to time, but if you want something reliable, go take a look
 at the original project.
 
@@ -24,9 +23,10 @@ at the original project.
 + 100% working on linux.
 + Untested on macOS.
 + Transparency is broken on Windows 10 (has graphical glitches like flickering).
-  The                                [solid                                color
-  scheme](https://github.com/manilarome/blurredfox/blob/master/colors/solid.css)
+  The [solid color scheme](https://github.com/phundrak/blurredfox-nord/blob/master/colors/solid.css)
   *may* work.
++ No, the vertical titlebar is not included. Switch to Linux, then use AwesomeWM
+  to achieve this gloriousness.
 
 ## How to
 
@@ -40,15 +40,14 @@ at the original project.
   an error! Make sure you only have one!
 + It is advisible to check the script first before running it.
 + You need `bash` to run it.
-+ If you have an existing chrome folder,  the script will make a backup of it in
++ If you have an existing chrome folder, the script will make a backup of it in
   your profile directory.
-+ If the installation  script is not working, feel free to submit  an issue or a
++ The script will move a file named `user.js` that contains all the preferences
+  needed for blurredfox to work. The existing one will be backed up.
++ If the installation script is not working, feel free to submit an issue or a
   pull request.
-+ The script will move a file  named `user.js` that contains all the preferences
-  needed for blurredfox to work. If you  have a current one, make sure to create
-  a backup.
 
-1. Run the script below. If you  are using a different build like nightly, beta,
+1. Run the script below. If you are using a different build like nightly, beta,
    etc., make sure to replace the 'stable' with the Firefox Build you are using.
    If leave empty, it will default to stable.
 
@@ -63,11 +62,11 @@ at the original project.
 	# Examples:
 
 	# Stable build's profile
-  	$ curl -fsSL https://raw.githubusercontent.com/phundrak/blurredfox/script/install.sh |
+  	$ curl -fsSL https://raw.githubusercontent.com/phundrak/blurredfox-nord/script/install.sh |
   	bash -s -- stable
 
   	# Nightly build's profile
-  	$ curl -fsSL https://raw.githubusercontent.com/phundrak/blurredfox/script/install.sh |
+  	$ curl -fsSL https://raw.githubusercontent.com/phundrak/blurredfox-nord/script/install.sh |
   	bash -s -- nightly
   	```
 
@@ -89,7 +88,7 @@ at the original project.
 	+ **`layout.css.backdrop-filter.enabled`**
 	+ **`svg.context-properties.content.enabled`**
 
-	Then make sure to  **enable them all!**. Or you can  just copy the `user.js`
+	Then make sure to **enable them all!**. Or you can just copy the `user.js`
     file to your profile.
 
 4. Go to your Firefox profile.
@@ -101,7 +100,8 @@ at the original project.
 5. Create a folder and name it **`chrome`**, then assuming that you already have
    cloned this repo, just copy its content to the `chrome` folder.
 6. Restart Firefox.
-7. Finally, you can now change whatever color mode you want in the Cusomization Window.
+7. Finally, you can now change whatever color mode you want in the Cusomization
+   Window.
 
 	+ Default - Uses system colors, but uses the theme's layout.
 	+ Dark - Dark colorscheme. Good for the night.
@@ -112,15 +112,12 @@ at the original project.
 ### Some UIs are broken!
 
 1. Check if you're using the latest version of Firefox.
-2. It's  broken because  you're using Windows  10 and macOS  or you're  using an
-   old version of Firefox.
+2. It's broken because you're using Windows 10 and macOS or you're using an ancient version of Firefox.
 
 ### If you're using Windows or macOS and something's wrong
 
-1. I only have  Archlinux, macOS' untested while the theme  is broken on Windows
-   10.
-2.    If    the    transparency    is   broken,    use    the    [solid    color
-   scheme](https://github.com/phundrak/blurredfox/blob/master/colors/solid.css).
+1. I only have Archlinux, macOS' untested while the theme is broken on Windows 10.
+2. If the transparency is broken, use the [solid color scheme](https://github.com/phundrak/blurredfox-nord/blob/master/colors/solid.css).
    Edit the `userChrome.css` to switch.
 
 ### Liar! The theme's name is `blurredfox`, ***where is the blur***?!
@@ -142,9 +139,9 @@ at the original project.
 
 ### I'm using KDE Plasma, but there's no blur! How many other lies have I been told by the council?
 
-1. Enable the blur in your compositor.  Go to `System Settings > Desktop Effects
-   >  Enable Blur`.  Note that  this  will not  enable  the blur  effect on  all
-   applications.
+1. Enable the blur in your compositor.  Go to
+   `System Settings > Desktop Effects >  Enable Blur`.
+   Note that this will not enable the blur effect on all applications.
 2. Enable the blur effect on all applications by installing a KWin script called
    [Force Blur](https://store.kde.org/p/1294604/). Make sure to read its manual.
    Don't you ever  dare to create an  issue about Force Blur!  Just kidding! But
@@ -152,10 +149,12 @@ at the original project.
 3. Go to `System Settings > KWin Scripts > Enable Force Blur`.
 4. Change its settings. If there's no settings/settings icon, Logout. Re-login.
 
-### Where is the scrollbar?
+### How can I set or change the colors for the Default color mode?
 
-1. You can adjust the value of `scrollbar-width` in `userContent.css`.
-2. Restart Firefox.
+1. The default mode are from Firefox and it uses the system colors. Although I
+   only tried and tested it with `GTK3`, it should work with any platforms or
+   environment as long as Firefox can detect your system colors.
+
 
 ### How can I set or change the colors for the Default color mode?
 
@@ -166,8 +165,7 @@ at the original project.
 
 ### I hate the colors! Why is everything transparent?!
 
-1.                          Use            the           [solid            color
-   scheme](https://github.com/phundrak/blurredfox/blob/master/colors/solid.css)
+1. Use the [solid color scheme](https://github.com/phundrak/blurredfox-nord/blob/master/colors/solid.css)
    by editing the `userChrome.css`.
 2. You can change the colors yourself.
 3. The transparency is only applied to `Dark` and `Light` mode under the blurred
@@ -178,19 +176,19 @@ at the original project.
 
 1. Go to your profile directory.
 2. Delete the `chrome` folder.
-3. If you used the installation script  or copied the `user.js` to your profile,
+3. If you used the installation script or copied the `user.js` to your profile,
    delete it.
 4. Sayonara.
 
 ## Got a problem?
 
-If   you   have   already   read   the   README,   free   to   open   an   issue
-[here](https://github.com/phundrak/blurredfox/issues)! But you’ll probably have
+If you have already read the README, free to open an issue
+[here](https://github.com/phundrak/blurredfox-nord/issues)! But you’ll probably have
 more luck with the original project, link at the top of this README.
 
 ## Got a patch?
 
-You're     absolutely      welcome     to     submit     a      pull     request
+You're absolutely welcome to submit a pull request
 [here](https://github.com/phundrak/phundrak/pulls)!
 
 ## TODO

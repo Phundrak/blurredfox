@@ -1,80 +1,84 @@
 :root {
-       /* All the CSS variables here are global */
-       /* These applies to all colorschemes */
+    /* All the CSS variables here are global */
+    /* These applies to all colorschemes */
 
-       /* If windows - `-moz-win-glass`, if macOS - `-moz-mac-vibrancy-dark` */
-       --bf-moz-appearance: -moz-mac-vibrancy-dark !important;
+    /* If windows - `-moz-win-glass`, if macOS - `-moz-mac-vibrancy-dark` */
+    --bf-moz-appearance: -moz-win-glass !important;
+    --bf-moz-appearance: -moz-mac-vibrancy-dark !important;
 
-       --bf-backdrop-blur: 6px;
+    --bf-backdrop-blur: 6px;
 
-       --bf-sidebar-searchbar-radius: 6px;
+    --bf-sidebar-searchbar-radius: 6px;
 
-       --bf-accent-bg: #5E81ACCC;
+    --bf-accent-bg: #5E81ACCC;
+	  --bf-blank-page-bg: #252525;
 
-       --bf-urlbar-hightlight-bg: var(--bf-accent-bg);
-       --bf-urlbar-radius: 9px;
-       --bf-urlbar-results-font-size: 12pt;
-       --bf-urlbar-results-font-weight: 550;
-       --bf-urlbar-font-size: 12pt;
-       --bf-urlbar-font-weight: 500;
-       --bf-urlbar-switch-tab-color: #88C0D0;
-       --bf-urlbar-bookmark-color: #A3BE8CW;
+    --bf-urlbar-hightlight-bg: var(--bf-accent-bg);
+    --bf-urlbar-radius: 9px;
+    --bf-urlbar-results-font-size: 12pt;
+    --bf-urlbar-results-font-weight: 550;
+    --bf-urlbar-font-size: 12pt;
+    --bf-urlbar-font-weight: 500;
+    --bf-urlbar-switch-tab-color: #88C0D0;
+    --bf-urlbar-bookmark-color: #2E3440;
 
-       --bf-navbar-padding: 6px;
+    --bf-navbar-padding: 6px;
 
-       --bf-tab-selected-bg: #81A1C188;
-       --bf-tab-font-size: 11pt;
-       --bf-tab-font-weight: 400;
-       --bf-tab-height: 36px;
-       --bf-tab-border-radius: 6px;
-       --bf-tab-soundplaying-bg: #B48EADCC;
+    --bf-tab-selected-bg: #81A1C188;
+    --bf-tab-font-size: 11pt;
+    --bf-tab-font-weight: 400;
+    --bf-tab-height: 36px;
+    --bf-tab-border-radius: 6px;
+    --bf-tab-soundplaying-bg: #B48EADCC;
 
-       --toolbar-bgcolor: transparent !important;
-       --urlbar-separator-color: transparent !important;
+    --toolbar-bgcolor: transparent !important;
+    --urlbar-separator-color: transparent !important;
 }
 
 /* Light Mode */
 :root:-moz-lwtheme-darktext {
-       --bf-bg: #ECEFF466;
-       --bf-color: #3B4252;
+	  --bf-main-window: transparent;
+    --bf-bg: #ECEFF466;
+    --bf-color: #3B4252;
 
-       --bf-hover-bg: #434C5E33;
-       --bf-active-bg: #434C5E66;
+    --bf-hover-bg: #434C5E33;
+    --bf-active-bg: #434C5E66;
 
-       --bf-icon-color: #3B4252;
-       --bf-tab-toolbar-bg: #ECEFF4AA;
-       --bf-tab-selected-bg: #2E344022;
-       --bf-navbar-bg: var(--bf-bg);
-       --bf-urlbar-bg: var(--bf-bg);
-       --bf-urlbar-active-bg: var(--bf-bg);
-       --bf-urlbar-focused-color: var(--bf-color);
+    --bf-icon-color: #3B4252;
+    --bf-tab-toolbar-bg: #ECEFF4AA;
+    --bf-tab-selected-bg: #2E344022;
+    --bf-navbar-bg: var(--bf-bg);
+    --bf-urlbar-bg: var(--bf-bg);
+    --bf-urlbar-active-bg: var(--bf-bg);
+    --bf-urlbar-focused-color: var(--bf-color);
 
-       --bf-sidebar-bg: var(--bf-bg);
-       --bf-sidebar-color: var(--bf-color);
+    --bf-sidebar-bg: var(--bf-bg);
+    --bf-sidebar-color: var(--bf-color);
 
-       --bf-menupopup-bg: #ECEFF4AA;
-       --bf-menupopup-color: var(--bf-color);
+    --bf-menupopup-bg: #ECEFF4AA;
+    --bf-menupopup-color: var(--bf-color);
 }
 
 /* Dark Mode */
 :root:-moz-lwtheme-brighttext {
-       --bf-bg: #2E344066;
-       --bf-color: #ECEFF4;
+    --bf-main-window: transparent;
+    --bf-bg: #2E344066;
+    --bf-color: #ECEFF4;
 
-       --bf-hover-bg: #ECEFF433;
-       --bf-active-bg: #ECEFF466;
+    --bf-hover-bg: #ECEFF433;
+    --bf-active-bg: #ECEFF466;
 
-       --bf-icon-color: #ECEFF4;
-       --bf-tab-toolbar-bg: #2E3440AA;
-       --bf-tab-selected-bg: #ECEFF410;
-       --bf-navbar-bg: var(--bf-bg);
-       --bf-urlbar-bg: var(--bf-bg);
-       --bf-urlbar-active-bg: var(--bf-bg);
-       --bf-urlbar-focused-color: var(--bf-color);
+    --bf-icon-color: #ECEFF4;
+    --bf-tab-toolbar-bg: #2E3440AA;
+    --bf-tab-selected-bg: #ECEFF410;
+    --bf-navbar-bg: var(--bf-bg);
+    --bf-urlbar-bg: var(--bf-bg);
+    --bf-urlbar-active-bg: var(--bf-bg);
+    --bf-urlbar-focused-color: var(--bf-color);
 
-       --bf-sidebar-bg: var(--bf-bg);
-       --bf-sidebar-color: var(--bf-color);
+    --bf-sidebar-bg: var(--bf-bg);
+    --bf-sidebar-color: var(--bf-color);
 
-       --bf-menupopup-bg: #2E3440AA;
-       --bf-menupopup-color: var(--bf-color);
+    --bf-menupopup-bg: #2E3440AA;
+    --bf-menupopup-color: var(--bf-color);
 }
